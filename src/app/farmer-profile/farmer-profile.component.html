@@ -1,0 +1,80 @@
+
+<table>
+    <tr>
+      
+      <td style="width: 1000px;text-align:center; margin-left: 10%">
+        <h1 style="color:greenyellow">     AgriCulture Portal     </h1>
+        <h5 style="font-style: italic; color: rgb(64, 66, 189);">     farm to shop trading platform       </h5>
+      </td>
+      <td><img src="../assets/agri.jpeg" alt="Govt logo"left="50%" aligned="middle" height="100px" width="500px"></td>
+      <td></td>
+    </tr>
+  </table>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div>
+        <ul class="nav navbar-nav" >
+            <li class="active">
+                <a routerLink="/farmerHome">Home</a>
+            </li>
+           
+            <li>
+                <a routerLink="/home">LogOut</a>
+            </li>
+            <li class="active">
+                <a routerLink="/newAdv">New Adv</a>
+            </li>        
+            <li class="active">
+                <a routerLink="/pendingAdv">Pending Adv</a>
+            </li>  
+            <li class="active">
+                <a routerLink="/liveAdv">Live Adv</a>
+            </li>
+            <li class="active">
+                <a routerLink="/closedAdv">Closed Adv</a>
+            </li> 
+            <li class="active">
+                <a routerLink="/farmerProfile">Profile</a>
+            </li>    
+        </ul>
+       
+      
+    </div>
+</nav>
+
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <h1>Profile Details     </h1>
+        
+     
+        <div class="form-group">
+           
+           <div class="table-responsive">
+               <table class="table table-hover">
+                  
+                   <tbody >
+                       <tr >
+                              <td>First Name</td><td>{{farmerProfile.firstName}}</td>
+                        </tr>
+                        <tr > <td>Last Name </td><td>{{farmerProfile.lastName}}</td>
+                        </tr>
+                        <tr > <td>Email     </td><td>{{farmerProfile.email}}</td>
+                        </tr>
+                        <tr > <td>Phone     </td><td>{{farmerProfile.phoneNo    }}</td> </tr>
+                        <tr > <td>A/c  Status</td><td>{{farmerProfile.status}}</td> </tr>
+                        
+                        <tr > <td>Address   </td><td>{{farmerProfile.address.houseNo}}</td> </tr>
+                        <tr > <td>          </td><td>{{farmerProfile.address.area}}</td> </tr>
+                        <tr > <td>          </td><td>{{farmerProfile.address.city}}</td> </tr>
+                        <tr > <td>          </td><td>{{farmerProfile.address.district}}</td> </tr>
+                        <tr > <td>          </td><td>{{farmerProfile.address.pincode}}</td> </tr>
+                        <tr > <td>          </td><td>{{farmerProfile.address.state}}</td> </tr>
+                   </tbody>
+               </table>
+               <td><button type="button" class="btn btn-primary" (click)="onEdit()">Edit</button></td>
+           </div>
+           
+          </div>   
+    </div>
+  </div>

@@ -1,0 +1,81 @@
+
+<table>
+    <tr>
+      
+      <td style="width: 1000px;text-align:center; margin-left: 10%">
+        <h1 style="color:greenyellow">     AgriCulture Portal     </h1>
+        <h5 style="font-style: italic; color: rgb(64, 66, 189);">     farm to shop trading platform       </h5>
+      </td>
+      <td><img src="../assets/agri.jpeg" alt="Govt logo"left="50%" aligned="middle" height="100px" width="500px"></td>
+      <td></td>
+    </tr>
+  </table>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+ 
+   <div>
+    <ul class="nav navbar-nav" >
+        <li class="active">
+            <a routerLink="/farmerHome">Home</a>
+        </li>
+        
+       
+        
+        <li>
+            <a routerLink="/home">LogOut</a>
+        </li>
+       
+        
+        <li class="active">
+            <a routerLink="/newAdv">New Adv</a>
+        </li>        
+        <li class="active">
+            <a routerLink="/pendingAdv">Pending Adv</a>
+        </li>  
+        <li class="active">
+            <a routerLink="/liveAdv">Live Adv</a>
+        </li>
+        <li class="active">
+            <a routerLink="/closedAdv">Closed Adv</a>
+        </li> 
+        <li class="active">
+            <a routerLink="/farmerProfile">Profile</a>
+        </li>    
+    </ul>
+   
+  
+</div>
+
+</nav>
+
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <h1>Fill Advertise Information Here</h1>
+        <div class="form-group">
+            <label for="">Select Crop</label>
+            <select [(ngModel)]="cropName" (change)="selected()" class="form-control"  >
+                <option *ngFor="let crop of cropList" >{{crop.cropName}}</option>
+              </select>
+          </div>
+     
+        <div class="form-group">
+            <label for="">Quantity To Sale</label>
+            <input [(ngModel)]="newReq.qtyToSale" type="number" maxlength = "30" class="form-control">
+          </div>
+          <div class="form-group">
+              <label for="">Per Unit Price</label>
+              <input [(ngModel)]="newReq.perUnitPrice" type="number" maxlength = "6" class="form-control" pattern="[0-9]{6}">
+            </div>
+          <div class="form-group">
+              <label for="">Upload Crop Image</label>
+              <input  type="file" [(ngModel)]="newReq.cropImage" class="form-control" >
+            </div>
+<!--   
+            (change)="onSelectFile($event)" -->
+      <div class="form-group">
+          <button (click)="onSubmit()" class="btn btn-success">Submit</button>
+          <button (click)="onCancel()" class="btn btn-warning" style="margin-left: 10px;">Cancel</button>
+      </div>
+    </div>
+  </div>

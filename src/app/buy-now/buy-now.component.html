@@ -1,0 +1,123 @@
+
+<table>
+        <tr>
+          
+          <td style="width: 1000px;text-align:center; margin-left: 10%">
+            <h1 style="color:greenyellow">     AgriCulture Portal     </h1>
+            <h5 style="font-style: italic; color: rgb(64, 66, 189);">     farm to shop trading platform       </h5>
+          </td>
+          <td><img src="../assets/agri.jpeg" alt="Govt logo"left="50%" aligned="middle" height="100px" width="500px"></td>
+          <td></td>
+        </tr>
+      </table>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+       
+       <ul>
+          
+       </ul>
+       
+       <div>
+        <ul class="nav navbar-nav" >
+            <li class="active">
+                <a routerLink="/wholesalerHome">Home</a>
+            </li>
+            
+            <li class="active">
+                <a routerLink="/aboutUs">About Us</a>
+            </li>
+            <li>
+                <a routerLink="/home">LogOut</a>
+            </li>
+            
+                   
+            <li class="active">
+                <a routerLink="/allLiveAdv">View LiveStock</a>
+            </li>
+            <li class="active">
+                <a routerLink="/orderHistory">Order History</a>
+            </li> 
+            <li class="active">
+                <a routerLink="/wholesalerProfile">Profile</a>
+            </li> 
+            <li class="active">
+                <a routerLink="/changePassword">Change Password</a>
+            </li>       
+            
+        </ul>
+    </div>
+    </nav>
+ 
+    <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-9">
+                <h1>Enter Quantity Of Crop and Checkout</h1>
+                
+                <h3>Your Order Details  Details</h3>
+                <div class="form-group">
+                   
+                   <div class="table-responsive">
+                       <table class="table table-hover">
+                           <thead>
+                               <tr>
+                                   <th>Farmer Req Id</th>
+                                   <th>Crop Name</th>
+                                   <th>Stock Quantity</th>
+                                   <th>Quanty To Buy</th>
+                                   <th>Per Unit Price</th>
+                                   <th>Total Amount</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr>
+                                   <td>{{productToBuy.farmerAdvId}}</td>
+                                   <td>{{productToBuy.cropName}}</td>
+                                   <td>{{productToBuy.qtyToSale}}</td>
+                                   <td><input maxlength = "5" [(ngModel)]="QtyToBuy" type="text" name=QtyToBuy (input)="cal(QtyToBuy)"  /></td>
+                                   <td>{{productToBuy.perUnitPrice}}</td>
+                                   <td><input maxlength = "5" [(ngModel)]="total" type="text" name=total  /></td>
+                                   
+                                   <td></td>
+                                   
+                               </tr>
+                           </tbody>
+                       </table>
+
+                   </div>
+                   
+                  </div>
+                  <h3>Shipping  Details</h3>
+     <div class="form-group">
+        <label for="">House No</label>
+        <input [(ngModel)]="wholesaler.shippingAddress.houseNo" type="text" maxlength = "10" class="form-control" >
+      </div>
+     <div class="form-group">
+        <label for="">Area</label>
+        <input [(ngModel)]="wholesaler.shippingAddress.area" type="text" maxlength = "30" class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="">City</label>
+          <input [(ngModel)]="wholesaler.shippingAddress.city" type="text" maxlength = "30" class="form-control">
+        </div>
+      <div class="form-group">
+          <label for="">District</label>
+          <input [(ngModel)]="wholesaler.shippingAddress.district" type="text" maxlength = "30" class="form-control">
+        </div>
+      <div class="form-group">
+          <label for="">State</label>
+          <input [(ngModel)]="wholesaler.shippingAddress.state" type="text" maxlength = "30" class="form-control">
+        </div>
+      <div class="form-group">
+          <label for="">Country</label>
+          <input [(ngModel)]="wholesaler.shippingAddress.country" type="text" maxlength = "30" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">PIN Code</label>
+            <input [(ngModel)]="wholesaler.shippingAddress.pinCode" type="number" maxlength = "6" class="form-control" pattern="[0-9]{6}">
+          </div>
+          <button type="button" class="btn btn-primary" (click)="checkOut()">Proced To Checkout</button>     
+          
+        
+             
+            </div>
+          </div>
+        

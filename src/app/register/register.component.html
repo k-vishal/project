@@ -1,0 +1,154 @@
+
+<table>
+  <tr>
+    
+    <td style="width: 1000px;text-align:center; margin-left: 10%">
+      <h1 style="color:greenyellow">     AgriCulture Portal     </h1>
+      <h5 style="font-style: italic; color: rgb(64, 66, 189);">     farm to shop trading platform       </h5>
+    </td>
+    <td><img src="../assets/agri.jpeg" alt="Govt logo"left="50%" aligned="middle" height="100px" width="500px"></td>
+    <td></td>
+  </tr>
+</table>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+ 
+ <ul>
+    
+ </ul>
+ 
+ <div>
+  <ul class="nav navbar-nav" >
+      <li class="active">
+          <a routerLink="">Home</a>
+      </li>
+      
+      <li class="dropdown">
+          <a  href="#" class="dropdown-toggle" data-toggle="dropdown">Major Crops</a>  
+              <ul class="dropdown-menu">
+                  <li><a href="" >Wheat</a></li>
+                  <li><a href="">Rice</a></li>   
+                  <li><a href="">Maize</a></li>
+                  <li><a href="">Jawar</a></li>
+              </ul>
+        
+      </li>
+      <li class="active">
+          <a routerLink="/aboutUs">About Us</a>
+      </li>
+      <li>
+          <a routerLink="/login">Login</a>
+      </li>
+      <li class="active">
+          <a routerLink="/faq">FAQ</a>
+      </li>        
+      
+  </ul>
+</div>
+</nav>
+
+
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+      <h1>SignUp Here</h1>
+      <div class="form-group">
+          <label for="">Select Role</label>
+          <select [(ngModel)]="userdetails.userRole" class="form-control" >
+              <option value="ADMIN">ADMIN</option>
+              <option value="FARMER">FARMER</option>
+              <option value="WHOLESALER">WHOLESALER</option>
+              <option value="CPF">COMPUTER PROF</option>
+            </select>
+        </div>
+    <div class="form-group">
+      <label for="">First Name</label>
+      <input [(ngModel)]="userdetails.firstName" type="text" maxlength = "30" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Last Name</label>
+      <input [(ngModel)]="userdetails.lastName" type="text" maxlength = "30" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input [(ngModel)]="userdetails.email" type="email" maxlength = "30" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Mobile No</label>
+        <input [(ngModel)]="userdetails.phoneNo" type="tel" maxlength = "10" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+      </div>
+    <div class="form-group">
+      <label for="">Password</label>
+      <input [(ngModel)]="userdetails.password" type="password" maxlength = "10" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Comfirm Password</label>
+      <input [(ngModel)]="confirmPassword" type="password" maxlength = "10" class="form-control">
+    </div>  
+    <div>
+    </div>
+    <div class="form-group">
+            <label for="">Date of Birth</label>
+            <input [(ngModel)]="userdetails.dob" type="date" class="form-control">
+     </div>  
+     <div class="form-group">
+      <label for="">Select Gender</label>
+      <select [(ngModel)]="userdetails.gender" class="form-control" >
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other"ther>Other</option>
+        </select>
+    </div>
+     <h3>Address Details</h3>
+     <div class="form-group">
+        <label for="">House No</label>
+        <input [(ngModel)]="userdetails.address.houseNo" type="text" maxlength = "10" class="form-control" >
+      </div>
+     <div class="form-group">
+        <label for="">Area</label>
+        <input [(ngModel)]="userdetails.address.area" type="text" maxlength = "30" class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="">City</label>
+          <input [(ngModel)]="userdetails.address.city" type="text" maxlength = "30" class="form-control">
+        </div>
+      <div class="form-group">
+          <label for="">District</label>
+          <input [(ngModel)]="userdetails.address.district" type="text" maxlength = "30" class="form-control">
+        </div>
+      <div class="form-group">
+          <label for="">State</label>
+          <input [(ngModel)]="userdetails.address.state" type="text" maxlength = "30" class="form-control">
+        </div>
+      <div class="form-group">
+          <label for="">Country</label>
+          <input [(ngModel)]="userdetails.address.country" type="text" maxlength = "30" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">PIN Code</label>
+            <input [(ngModel)]="userdetails.address.pinCode" type="tel" maxlength = "6" class="form-control" pattern="[0-9]{6}">
+          </div>
+        <!-- <div class="form-group">
+            <label for="">Upload Photo</label>
+            <input [(ngModel)]="userdetails.photo" type="file"  class="form-control" >
+          </div> -->
+
+
+    
+
+  
+     
+       
+
+
+
+    <div class="form-group">
+        <button (click)="onSignup()" class="btn btn-success">Sign Up</button>
+        <button (click)="onReset()" class="btn btn-danger" style="margin-left: 10px;">Reset</button>
+        <button (click)="onCancel()" class="btn btn-warning" style="margin-left: 10px;">Cancel</button>
+    </div>
+    <span class="label label-danger">{{message}}</span>
+  </div>
+</div>
+

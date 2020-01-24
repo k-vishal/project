@@ -1,0 +1,79 @@
+
+<table>
+    <tr>
+      
+      <td style="width: 1000px;text-align:center; margin-left: 10%">
+        <h1 style="color:greenyellow">     AgriCulture Portal     </h1>
+        <h5 style="font-style: italic; color: rgb(64, 66, 189);">     farm to shop trading platform       </h5>
+      </td>
+      <td><img src="../assets/agri.jpeg" alt="Govt logo"left="50%" aligned="middle" height="100px" width="500px"></td>
+      <td></td>
+    </tr>
+  </table>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+   
+   <ul>
+      
+   </ul>
+   
+   <div>
+    <ul class="nav navbar-nav" >
+        <li class="active">
+            <a routerLink="">Home</a>
+        </li>
+        
+        <li class="dropdown">
+            <a  href="#" class="dropdown-toggle" data-toggle="dropdown">Major Crops</a>  
+                <ul class="dropdown-menu">
+                    <li><a href="#" >Wheat</a></li>
+                    <li><a href="">Rice</a></li>   
+                    <li><a href="">Maize</a></li>
+                    <li><a href="">Jawar</a></li>
+                </ul>
+          
+        </li>
+        <li class="active">
+            <a routerLink="/aboutUs">About Us</a>
+        </li>
+        <li>
+            <a routerLink="/login">Login</a>
+        </li>
+        <li class="active">
+            <a routerLink="/faq">FAQ</a>
+        </li>        
+        
+    </ul>
+</div>
+</nav>
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+                <h1>Log In Here</h1>
+               
+    <div class="form-group">
+        <label for="email">User Name</label>
+        <input type="text" class="form-control" id="email" name="email" placeholder="email" [(ngModel)]="userdetails.email">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="password" [(ngModel)]="userdetails.password">
+    </div>
+    
+
+    
+    <button (click)="SignIn()" class="btn btn-primary">Login</button>&nbsp;&nbsp;
+    <button (click)="onCancel()" class="btn btn-danger">Cancel</button>&nbsp;&nbsp;
+    <button (click)="onSignup()" class="btn btn-warning">Signup</button>
+    <span class="label label-danger">{{message}}</span>
+    
+</div>
+</div>
+
+
