@@ -82,6 +82,7 @@ message;
             {
               if(this.u.status=='ACTIVE')
               {
+              //  debugger;
                 sessionStorage['login_status'] = '1';
                 localStorage.setItem('email',this.userdetails.email);
                 localStorage.setItem('flag','true');

@@ -71,6 +71,7 @@
                     <tr *ngFor="let advlist of allLiveAdvList">
                      <td>{{advlist.farmerAdvId}}</td>
                      <td>{{advlist.cropName}}</td>
+                     <td><img src="data:image/gif;base64,{{advlist.cropImage}}" alt=""></td>
                      <td>{{advlist.qtyToSale}}</td>
                      <td>{{advlist.perUnitPrice}}</td>
                      <td>{{advlist.advStatus}}</td>

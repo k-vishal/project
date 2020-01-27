@@ -62,6 +62,7 @@
                     <tr>
                         <th>Farmer Adv Id</th>
                         <th>Crop Name</th>
+                        <th>Crop Image</th>
                         <th>Quanty To sale</th>
                         <th>Per Unit Price</th>
                         <th>Status</th>
@@ -75,6 +76,7 @@
                     <tr *ngFor="let advlist of pendingAdvList">
                         <td>{{advlist.farmerAdvId}}</td>
                         <td>{{advlist.cropName}}</td>
+                        <td><img src="data:image/gif;base64,{{advlist.cropImage}}" alt=""></td>
                         <td>{{advlist.qtyToSale}}</td>
                         <td>{{advlist.perUnitPrice}}</td>
                         <td>{{advlist.advStatus}}</td>

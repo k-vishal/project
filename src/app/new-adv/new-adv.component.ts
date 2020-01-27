@@ -12,9 +12,10 @@ export class NewAdvComponent implements OnInit {
   userDetails:any;
   crop:any;
   name:any;
+  userFile:any=File;
   cropList:any;
   cropName:any;
-
+  cropImage:any;
   constructor(private route:ActivatedRoute,private router:Router,private service:DataService)
  { 
     // this.cropList=[
@@ -32,8 +33,8 @@ export class NewAdvComponent implements OnInit {
     cropName:"",
     qtyToSale:"",
     perUnitPrice:"",
-    advStatus:"PENDING"
-    //cropImage:""
+    advStatus:"PENDING",
+    cropImage:""
    
   }
 
@@ -50,12 +51,13 @@ export class NewAdvComponent implements OnInit {
     console.log(this.cropName)
     this.name=this.cropName;
   }
-  // onSelectFile(event)
-  // {
-  //   const file=event.target.files[0];
-  //   console.log(file);
-   
-  // }
+  onSelectFile(event)
+  {
+    const file=event.target.files[0];
+    console.log(file);
+    this.userFile=file;
+    console.log(this.userFile);
+  }
   onCancel()
   {
     this.router.navigate(["/farmerHome"]);
@@ -68,8 +70,12 @@ export class NewAdvComponent implements OnInit {
     this.newReq.advStatus="PENDING";
   console.log(this.newReq.advStatus);
   console.log(this.newReq);
+  const formData =new FormData();
+  formData.append("user", JSON.stringify(this.newReq));
+  formData.append("file", this.userFile);
+  console.log(formData);
   this.route.paramMap.subscribe((data)=>{
-    let observableResult = this.service.AddNewAdv(this.newReq);
+    let observableResult = this.service.AddNewAdv(formData);
     observableResult.subscribe((result)=>{
     console.log(result);
     alert("New Crop Advertisement added successfully");

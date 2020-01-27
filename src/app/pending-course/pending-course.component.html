@@ -15,34 +15,32 @@
    <div>
     <ul class="nav navbar-nav" >
         <li class="active">
-            <a routerLink="/farmerHome">Home</a>
+            <a routerLink="/cpfHome">Home</a>
         </li>
-       
+     
         <li>
             <a routerLink="/home">LogOut</a>
         </li>
+     
+        
         <li class="active">
-            <a routerLink="/newAdv">New Adv</a>
+            <a routerLink="/newCourse">New Course</a>
         </li>        
         <li class="active">
-            <a routerLink="/pendingAdv">Pending Adv</a>
+            <a routerLink="/pendingCourse">Pending</a>
         </li>  
         <li class="active">
-            <a routerLink="/liveAdv">Live Adv</a>
+            <a routerLink="/schedules">Schedules</a>
         </li>
         <li class="active">
-            <a routerLink="/closedAdv">Closed Adv</a>
+            <a routerLink="/courseHistory">Hisroty</a>
         </li> 
         <li class="active">
-            <a routerLink="/farmerProfile">Profile</a>
+            <a routerLink="/cpfProfile">Profile</a>
         </li>    
-    </ul>
-   
-  
+    </ul>  
 </div>
-
 </nav>
-
 
 <div class="row">
     <div class="col-md-2"></div>
@@ -56,28 +54,25 @@
                <table class="table table-hover">
                    <thead>
                        <tr>
-                           <th>Farmer Adv Id</th>
-                           <th>Crop Name</th>
-                           <th>Quanty To sale</th>
-                           <th>Per Unit Price</th>
+                           <th>courseId</th>
+                           <th>Course Name</th>
+                           <th>Venue</th>
+                           <th>Starting Date</th>
+                           <th>Course Duration (in days)</th>
                            <th>Status</th>
-                           <th>Famer Name</th>
-                           <th>email</th>
-                           <th>Mobile No</th>
+                          
                            
                        </tr>
                    </thead>
                    <tbody>
-                       <tr *ngFor="let advlist of pendingAdvList">
-                           <td>{{advlist.farmerAdvId}}</td>
-                           <td>{{advlist.cropName}}</td>
-                           <td><img src="data:image/gif;base64,{{advlist.cropImage}}" alt=""></td>
-                           <td>{{advlist.qtyToSale}}</td>
-                           <td>{{advlist.perUnitPrice}}</td>
-                           <td>{{advlist.advStatus}}</td>
-                           <td>{{advlist.userDetails.firstName}} {{advlist.userDetails.lastName}}</td>
-                           <td>{{advlist.userDetails.email}}</td>
-                           <td>{{advlist.userDetails.phoneNo}}</td>
+                       <tr *ngFor="let advlist of pendingCourseList">
+                           <td>{{advlist.courseId}}</td>
+                           <td>{{advlist.courseName}}</td>
+                          
+                           <td>{{advlist.courseLocation}}</td>
+                           <td>{{advlist.startDate}}</td>
+                           <td>{{advlist.courseStatus}}</td>
+                           
                            <td><button type="button" class="btn btn-primary" (click)="onDelete(advlist)">Delete</button></td>
                            
                        </tr>
@@ -94,4 +89,3 @@
     </div>
   </div>
 
-  

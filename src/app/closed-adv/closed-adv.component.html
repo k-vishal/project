@@ -48,7 +48,7 @@
 <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-9">
-            <h1>List of Live Advertisement  </h1>
+            <h1>List of Closed Advertisement  </h1>
             
          
             <div class="form-group">
@@ -72,6 +72,7 @@
                         <tr *ngFor="let advlist of closedAdvList">
                             <td>{{advlist.farmerAdvId}}</td>
                             <td>{{advlist.cropName}}</td>
+                            <td><img src="data:image/gif;base64,{{advlist.cropImage}}" alt=""></td>
                             <td>{{advlist.qtyToSale}}</td>
                             <td>{{advlist.perUnitPrice}}</td>
                             <td>{{advlist.advStatus}}</td>

@@ -15,14 +15,14 @@ export class DataService {
   {
     return this.http.post("http://localhost:8080/agriculture/user/register",user);
   }
-  // AddNewAdv(formdata:FormData):Observable<any>
-  // {
-  //   return this.http.post("http://localhost:8080/agriculture/user/addNewAdv/"+(JSON.parse(window.sessionStorage.getItem("user")).userId),formdata);
-  // }
-  AddNewAdv(user)
+  AddNewAdv(formdata:FormData):Observable<any>
   {
-    return this.http.post("http://localhost:8080/agriculture/user/addNewAdv/"+(JSON.parse(window.sessionStorage.getItem("user")).userId),user);
+    return this.http.post("http://localhost:8080/agriculture/user/addNewAdv/"+(JSON.parse(window.sessionStorage.getItem("user")).userId),formdata);
   }
+  // AddNewAdv(user)
+  // {
+  //   return this.http.post("http://localhost:8080/agriculture/user/addNewAdv/"+(JSON.parse(window.sessionStorage.getItem("user")).userId),user);
+  // }
 
   AddCrop(user)
   {
@@ -95,5 +95,13 @@ export class DataService {
   changeUserStatus(user)
   {
     return this.http.post("http://localhost:8080/agriculture/user/changeUserStatus",user);
+  }
+  NewCourse(course)
+  {
+    return this.http.post("http://localhost:8080/agriculture/user/NewCourse/"+(JSON.parse(window.sessionStorage.getItem("user")).userId),course);
+  }
+  pendingCourseList()
+  {
+    return this.http.get("http://localhost:8080/agriculture/user/pendingCourseList");
   }
 }

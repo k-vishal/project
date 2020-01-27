@@ -46,27 +46,35 @@ export class RegisterComponent implements OnInit {
   }
   onSignup()
   {
+    console.log("sdrtyujhcxswertyh");
+     console.log(this.userdetails);
     if(this.confirmPassword==this.userdetails.password)
+            {
+              console.log("inside first if");
+            if(this.userdetails.userRole=="ADMIN")
+            this.userdetails.status="ADMIN";
+            else if(this.userdetails.userRole=="CPF")
+            this.userdetails.status="BLOCKED";
+            else  
+                this.userdetails.status="ACTIVE";
+              
+                this.route.paramMap.subscribe((data)=>{
+                  let observableResult = this.service.Register(this.userdetails);
+                  observableResult.subscribe((result)=>{
+                  console.log(result);
+                  alert("account created successfully, please log in");
+                  this.router.navigate(['/login']);
+                      
+                    });
+                  })
+                  
+                
+            }
+    else
       {
-      if(this.userdetails.userRole=="ADMIN")
-      this.userdetails.status="ADMIN";
-      if(this.userdetails.userRole=="CPF")
-      this.userdetails.status="BLOCKED";
-      else  this.userdetails.status="ACTIVE";
+        this.message = "UserName/Password Mismatch..!";
+      } 
       console.log(this.userdetails);
-      this.route.paramMap.subscribe((data)=>{
-        let observableResult = this.service.Register(this.userdetails);
-        observableResult.subscribe((result)=>{
-        console.log(result);
-        alert("account created successfully, please log in");
-        this.router.navigate(['/login']);
-        
-      });
-    })
-  }else
-    {
-      this.message = "UserName/Password Mismatch..!";
-    } 
   }
 
 }

@@ -35,6 +35,11 @@ import { AllLiveAddforAdminComponent } from './all-live-addfor-admin/all-live-ad
 import { RejectedAdvComponent } from './rejected-adv/rejected-adv.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { CpfHomeComponent } from './cpf-home/cpf-home.component';
+import { SchedulesComponent } from './schedules/schedules.component';
+import { NewCourseComponent } from './new-course/new-course.component';
+import { PendingCourseComponent } from './pending-course/pending-course.component';
+import { CourseHistoryComponent } from './course-history/course-history.component';
+import { CpfProfileComponent } from './cpf-profile/cpf-profile.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +74,12 @@ import { CpfHomeComponent } from './cpf-home/cpf-home.component';
     AllLiveAddforAdminComponent,
     RejectedAdvComponent,
     EditProfileComponent,
-    CpfHomeComponent
+    CpfHomeComponent,
+    SchedulesComponent,
+    NewCourseComponent,
+    PendingCourseComponent,
+    CourseHistoryComponent,
+    CpfProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -106,7 +116,12 @@ import { CpfHomeComponent } from './cpf-home/cpf-home.component';
       {path:"cropManagement",component:CropManagementComponent},
       {path:"controlManagement",component:ControlManagementComponent},
       {path:"editProfile",component:EditProfileComponent},
-      {path:"cpfHome",component:CpfHomeComponent}
+      {path:"cpfHome",component:CpfHomeComponent},
+      {path:"cpfProfile", component:CpfProfileComponent},
+      {path:"courseHistory", component:CourseHistoryComponent},
+      {path:"pendingCourse", component:PendingCourseComponent},
+      {path:"newCourse", component:NewCourseComponent},
+      {path:"schedules", component:SchedulesComponent}
 
     ])
   ],

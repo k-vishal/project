@@ -6,8 +6,11 @@ import{user} from './user';
   providedIn: 'root'
 })
 export class AuthService implements CanActivate {
-  User:any;
+ User:any;
+
+ 
   constructor(private router:Router,private service:DataService) {
+    
     this.User={
       userId:"",
       firstName :"",
@@ -18,7 +21,9 @@ export class AuthService implements CanActivate {
       userStatus:"",
       addressId:"",
       dob:"",
-      photo:""};
+      photo:"",
+      status:""};
+    
 
    }
    canActivate(route: ActivatedRouteSnapshot, state:RouterStateSnapshot)
@@ -44,7 +49,7 @@ export class AuthService implements CanActivate {
    }
    CheckUser(userDetails)
    {
- 
+// debugger;
      this.service.Login(userDetails).subscribe((res)=>{
        console.log("res"+res);
        this.User.userId = res["userId"];
